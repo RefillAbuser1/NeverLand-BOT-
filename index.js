@@ -6,12 +6,13 @@ const config = require("./config.json");
 bot.on('ready', () => {
   console.log(`Logged in as ${bot.user.tag}!`);
 
-bot.user.setPresence({game: {name: 'prefix: @help | Maintance', type:0 } });
+bot.user.setPresence({game: {name: 'prefix: @help', type:0 } });
 });
 
 bot.on('message', message => {
   if(message.author.bot) return;
   if(!message.content.startsWith(config.prefix)) return;
+  }
   
   if (command === "help") {
 	 message.channel.sendMessage("NeverLand bot in Maintance");
