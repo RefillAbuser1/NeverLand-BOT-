@@ -14,7 +14,7 @@ bot.on('message', message => {
   if(!message.content.startsWith(config.prefix)) return;
   
   if (command === "help") {
-	 message.channel.sendMessage("prefix: @help | Maintance");
+	 message.channel.sendMessage("NeverLand bot in Maintance");
   }
   
 });
