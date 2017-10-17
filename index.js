@@ -13,20 +13,12 @@ bot.on('message', message => {
   if(message.author.bot) return;
   if(!message.content.startsWith(config.prefix)) return;
 
-  let command = message.content.split(" ")[0];
-  command = command.slice(config.prefix.length);
+  if (command === "say") {
+    message.channel.sendMessage(args.join(" "));
+  }
 
-  let args = message.content.split(" ").slice(1);
-
-  if (command === "add") {
-    let numArry = args.map(n=> parseInt(n));
-    let total = numArry.reduce( (p, c) => p+c);
-
-    message.channel.sendMessage(total);
-  } 
-  
   if (command === "help") {
-	 message.channel.sendMessage("Commands: @add, @help");
+	 message.channel.sendMessage("NeverLand | Maintance");
   }
   
 });
